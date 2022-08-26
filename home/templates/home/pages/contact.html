@@ -1,0 +1,29 @@
+{% extends 'baseLayout.html' %}
+{% load static %}
+{% block title %}contact{% endblock %}
+
+{% block nav %} {% include "menu/menuPublic.html" %}{% endblock%}
+
+{% block content %}
+    <h1>Les contacts</h1>
+    <div class = 'listarticle'>   
+    {% for contact in contacts %}
+    <article class ='message {% if message.isRed %} red {% else %} unread {% endif %}'>
+        <h2 class = "contactTitre">Poste : {{contact.poste.nom}}</h3>
+        <div class = 'contactcorp'>
+            <div class = 'infocontact'>
+                <p>Mon : {{contact.nom}}</p>
+                <p>Prenom : {{contact.prenom}}</p>
+                <p>Tel : {{contact.phoneNumber}}</p>
+                <p>Tel : {{contact.mail}}</p>
+                <p>Depuis : {{contact.created_on}}</p>
+            </div>
+            <div >
+                {% if contact.photo %}<img  class ='photo' src="{{contact.photo.url}}">{% endif %}
+            </div> 
+        </div>     
+    </article>
+  
+    {% endfor %}
+</div>
+{% endblock  %}

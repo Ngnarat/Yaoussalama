@@ -1,0 +1,38 @@
+@import url('header.css');
+
+main{
+    display: flex;
+    flex-direction: column;
+
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border: 1px solid;
+}
+
+.listarticle{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.infocontact{
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.contactcorp{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.photo{
+    width: 100px;
+    margin-right: 5px;
+    
+}

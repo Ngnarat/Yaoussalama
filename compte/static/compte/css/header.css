@@ -1,0 +1,32 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: chocolate;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    height: 35px;
+    border: 1px solid;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}   
+
+.grouppage{
+    width: 50vw;
+    margin: 5px;
+}
+
+.listpage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.listpage li{
+    display: inline;
+}

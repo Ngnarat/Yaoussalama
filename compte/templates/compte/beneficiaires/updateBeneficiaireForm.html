@@ -1,0 +1,18 @@
+{% extends 'baseLayout.html' %}
+{% load static %}
+{% block title %} Modifier un beneficiaire {% endblock %}
+{% block static %}
+    <link rel="stylesheet" href="{% static 'compte/css/afficherbeneficiaire.css' %}" >
+{% endblock %}
+{% block header %} {% include 'compte/header.html' %} {% endblock %}
+{% block main %}
+    {{message}}
+    <form method ="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <div> {{form.as_p}} </div>
+        <input type="submit" value="Modifieer">
+    </form>
+    
+{% endblock %}
+

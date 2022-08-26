@@ -1,0 +1,20 @@
+{% extends 'baseLayout.html' %}
+{% load static %}
+{% block title%}Mes message{% endblock %}
+{% block static %}
+    <link rel="stylesheet" href="{% static 'compte/css/afficherbeneficiaire.css' %}" >
+{% endblock %}
+{% block header %} {% include 'compte/header.html' %} {% endblock %}
+{% block main %}
+    <h1> list de mes messages</h1>
+    <a href ={% url 'addmessage' %}>Nouveau message</a>
+    {% for message in messages %}
+    <article class ='message {% if message.isRed %} red {% else %} unread {% endif %}'>
+      <p>Date : {{message.sujet}}</p>
+      <p>Montant : {{message.message}}</p>
+      <p>commentaire : {{message.create_at}}</p>
+    </article>
+    <hr>
+    {% endfor %}
+
+{% endblock %}

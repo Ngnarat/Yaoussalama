@@ -1,0 +1,14 @@
+<div class ='accueil'> <a href ="{% url 'home' %}" >Accueil</a> </div>
+<div>
+    <ul>
+        <li class="onglet"><a href = "{% url 'blog' %}">Blog</a></li>
+        <li class="onglet"><a href = "{% url 'about' %}">A propos</a></li>
+        <li class="onglet"><a href = "{% url 'contact' %}">Nous contacter</a></li>
+        <li class="onglet"><a href = "{% url 'faq' %}">FAQ</a></li>
+    </ul> 
+</div>
+<div>
+    <div class="profil">
+        <a href = "{% url 'login' %}">Mon profil</a>
+    </div>
+</div>

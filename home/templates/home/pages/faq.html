@@ -1,0 +1,39 @@
+
+{% extends 'baseLayout.html' %}
+{% load static %}
+{% block title %}FAQ{% endblock %}
+
+{% block nav %} {% include "menu/menuPublic.html" %}{% endblock%}
+
+{% block content %}
+    <h1>Les questions fréquemment posées.</h1>
+    <div class = 'listarticle'>   
+    {% for article in articles %}
+    <article class ='card'>
+        <h2 class = "titre">Poste : {{article.titre}}</h3>
+        <div class = 'contactcorp'>
+            <div class = 'infocontact'>
+                <p>contenu : {{article.contenu}}</p>
+                {% if article.photo %}<img width="350" class ="{{article.titre}}" src="{{article.photo.url}}">{% endif %}
+            </div>
+            <div >
+                {% if article.audio %}
+                    <figure >
+                        <figcaption>Ecouter l'audio:</figcaption>
+                        <audio controls src="{{article.audio.url}}">
+                            Votre navigateur ne supporte pas la balise audio
+                        </audio>
+                    </figure>
+                {% endif %}
+                {% if article.video %}
+                    <video controls width="250">
+                        <source src="{{article.video.url}}">
+                        Votre navigateur ne prend pas en charge les vidéos HTML5.
+                    </video>
+                {% endif %}
+            </div> 
+        </div>     
+    </article>
+    {% endfor %}
+{% endblock  %}
+

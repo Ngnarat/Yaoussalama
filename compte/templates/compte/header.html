@@ -1,0 +1,13 @@
+<div class ="home"> <a href ="{% url 'home' %}" >Accueil</a> </div>
+<div class = "grouppage">
+    <ul class = "listpage">
+        <li class="page"><a href = "{% url 'profil' %}">Mes bénéficiaires</a></li>
+        <li class="page"><a href = "{% url 'list_paiement' %}">Mes paiements</a></li>
+        <li class="page"><a href = "{% url 'list_message' %}">Mes messages</a></li>
+    </ul> 
+</div>
+<div class="profil">
+    <a href = "{% url 'logout' %}">Se deconnecter</a>
+</div>
+
+

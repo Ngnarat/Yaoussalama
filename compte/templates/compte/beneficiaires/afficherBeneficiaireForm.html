@@ -1,0 +1,21 @@
+{% extends 'baseLayout.html' %}
+{% load static %}
+{% block title %} Detail d'un beneficiaire {% endblock %}
+{% block static %}
+    <link rel="stylesheet" href="{% static 'compte/css/afficherbeneficiaire.css' %}" >
+{% endblock %}
+{% block header %} {% include 'compte/header.html' %} {% endblock %}
+{% block main %}
+
+    <section>
+        <img class = "profilpicture" src= "{{beneficiaire.photo.url}}" />
+        <p> Nom: {{beneficiaire.first_name}}</p>
+        <p> Prenom: {{beneficiaire.last_name}}</p>
+        <p> Né(e) le: {{beneficiaire.dateOfBirth}}</p>
+        <p> Créé le: {{beneficiaire.date_joined}}</p>
+        <p> Modifier le: {{beneficiaire.lastUpdate}}</p>
+        <p> Lien de famille: {{beneficiaire.LientFamilial}}</p>
+        <p> Active? : {{beneficiaire.isActive}}</p>
+        <a href ="{% url 'modifier_beneficiaire' beneficiaire.id %}"> <button>Modifier</button> </a> 
+    </section>
+{% endblock %}

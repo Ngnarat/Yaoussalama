@@ -1,0 +1,16 @@
+{% extends 'baseLayout.html' %}
+{% load static %}
+{% block title%}Mes message{% endblock %}
+{% block static %}
+    <link rel="stylesheet" href="{% static 'compte/css/afficherbeneficiaire.css' %}" >
+{% endblock %}
+{% block header %} {% include 'compte/header.html' %} {% endblock %}
+{% block main %}
+    <h1>Création de message</h1>
+    <form method ="post">
+        {% csrf_token %}
+        <div> {{form.as_p}} </div>
+        <input type="submit" value="Valider">
+    </form>
+
+{% endblock %}

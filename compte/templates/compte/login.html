@@ -1,0 +1,44 @@
+{% extends 'baseLayout.html' %}
+{% load static %}
+
+{% block title %}Sing in{% endblock %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'compte/css/login.css' %}" > 
+{% endblock  %}
+
+{% block nav %} 
+    {% include "menu/formulaire/menuSignInRegister.html" %}
+{% endblock%}
+
+{% block content %}
+    <div class="d-flex flex-row justify-content-center mt-5">
+        <form method ="post">
+            {% csrf_token %} 
+            
+            <h3>Connectez vous ici</h3>
+
+            {% comment %} {{form }} {% endcomment %}
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    {{ field.label_tag }}
+                    {% if field.errors %}
+                        <p class="alert alert-warning ">
+                            {% for error in field.errors %}
+                                {{error}} 
+                            {% endfor %}
+                        </p>
+                    {% endif %}
+                    
+                    {{ field }}
+            {% endfor %}
+
+            <button class ="submit type="submit">Se connecter</button>
+            <div class="social">
+                <div class="go"><a class="fab fa-google" href="#">Mot de passe oublié ?</a></div>
+                <div class="fb"><a class="fab fa-google" href="{% url 'register' %}">Créer un compte</a></div>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

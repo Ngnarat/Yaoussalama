@@ -1,0 +1,20 @@
+{% extends 'baseLayout.html' %}
+{% load static %}
+{% block title%}Mes Paiements{% endblock %}
+{% block static %}
+    <link rel="stylesheet" href="{% static 'compte/css/afficherbeneficiaire.css' %}" >
+{% endblock %}
+{% block header %} {% include 'compte/header.html' %} {% endblock %}
+{% block main %}
+    <h1> list de mes paiements</h1>
+    {% for paiement in paiements %}
+    <article class ='paiement'>
+      <p>Date : {{paiement.date}}</p>
+      <p>Montant : {{paiement.montant}}</p>
+      <p>commentaire : {{paiement.commentaire}}</p>
+      <p>Enregister par : {{paiement.utilisateur}}</p>
+    </article>
+    <hr>
+    {% endfor %}
+
+{% endblock %}

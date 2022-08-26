@@ -1,0 +1,30 @@
+{% extends 'baseLayout.html' %}
+{% load static %}
+{% block title %} le suis dans la page du profil{% endblock %}
+{% block static %}
+    <link rel="stylesheet" href="{% static 'compte/css/afficherbeneficiaire.css' %}" >
+{% endblock %}
+{% block header %} {% include 'compte/header.html' %} {% endblock %}
+{% block main %}
+    <div> <h3>le suis dans la page du profil</h3></div>
+    {% if user.first_name %}
+        <p> Bonjour {{ user.first_name }} {{ user.last_name }} </P>
+        <p> Bonjour {{ user.dateOfBirth }} </P>
+        <p> adresse mail: {{user.email}}  </P> 
+        
+       <br> <br> <hr>
+        {%for benef in beneficiaire %}
+            <p> {{benef.first_name }} </p>
+            <p> {{benef.last_name }} </p>
+            <p> {{benef.dateOfBirth}} </p>
+            
+            <a href ="{% url 'affiche_beneficiaire' benef.id %}"> <button>afficher</button> </a>
+            <hr>
+        {% endfor %}
+        <a href ="{% url 'ajouter_beneficiaire' %}"> <button>Ajouter un beneficiaire  </button> </a>  
+       
+    {% else %}
+        <a href = "{% url 'login' %}">Se connecter </a>  
+    {% endif %}
+    
+{% endblock %}

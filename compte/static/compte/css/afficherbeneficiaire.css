@@ -1,0 +1,12 @@
+@import url("header.css");
+
+
+
+body{
+    background-color: chocolate;
+    font-family: sans-serif;
+    font-size: medium;
+}
+.profilpicture{
+    width: 150px;
+}

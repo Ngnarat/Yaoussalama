@@ -1,0 +1,14 @@
+
+
+.imgLogo{
+    display: block;
+    width: 10vw;
+    /* width: 100%; */
+    /* height: 100%;  */
+    background-color:blue;
+    background: url("../images/logo.jpg");
+}
+
+main{
+    min-height: 100vh;
+}
